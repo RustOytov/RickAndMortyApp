@@ -14,7 +14,7 @@ struct Character: Decodable {
     let type: String
     let gender: String
     let origin: Location
-    let episode: [String]  // Изменено на массив строк (URL)
+    let episode: [String]
 }
 
 // Структура для данных об эпизоде
@@ -99,14 +99,13 @@ class CharactersAPI {
                 return
             }
 
-            // Выведем данные перед декодированием
             if let jsonString = String(data: data, encoding: .utf8) {
                 print("Received episode JSON: \(jsonString)")
             }
             
             do {
                 let episode = try JSONDecoder().decode(Episode.self, from: data)
-                completion(episode.episode)  // Теперь возвращаем не только название, но и номер эпизода
+                completion(episode.episode)
             } catch {
                 print("Failed to decode episode: \(error)")
             }
@@ -137,7 +136,6 @@ class CharactersAPI {
                 return
             }
 
-            // Выведем данные перед декодированием
             if let jsonString = String(data: data, encoding: .utf8) {
                 print("Received episode JSON: \(jsonString)")
             }

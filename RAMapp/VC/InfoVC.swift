@@ -14,10 +14,8 @@ class InfoVC: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
 
-        // Добавляем collectionView перед активацией ограничений
         view.addSubview(collectionView)
 
-        // Устанавливаем ограничения
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -30,7 +28,7 @@ class InfoVC: UIViewController {
         collectionView.register(OriginCell.self, forCellWithReuseIdentifier: "OriginCell")
         collectionView.register(EpisodesCell.self, forCellWithReuseIdentifier: "EpisodesCell")
 
-        collectionView.dataSource = self // Назначаем DataSource
+        collectionView.dataSource = self
     }
 
     // MARK: - Layout
@@ -106,7 +104,6 @@ class InfoVC: UIViewController {
     // MARK: - DataSource
 }
 
-// Убедитесь, что InfoVC реализует UICollectionViewDataSource
 extension InfoVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
@@ -151,10 +148,8 @@ extension InfoVC: UICollectionViewDataSource {
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodesCell", for: indexPath) as! EpisodesCell
             
-            // Получаем URL для текущего эпизода
             let episodeUrl = selectedCharacter!.episode[indexPath.row]
             
-            // Загружаем название эпизода по URL
             let api = CharactersAPI()
             api.loadEpisodeName(from: episodeUrl) { episodeName in
                 DispatchQueue.main.async {

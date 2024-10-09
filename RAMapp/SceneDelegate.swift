@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  RAMapp
-//
-//  Created by Рустам Ойтов on 07.10.2024.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
