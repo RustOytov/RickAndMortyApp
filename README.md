@@ -1,0 +1,3 @@
+This is an application in the Rick and Morty universe. The application receives via API a list of characters and information about each hero, which is presented on the third screen
+
+<img width="569" alt="Снимок экрана 2024-10-09 в 14 08 57" src="https://github.com/user-attachments/assets/cd4ee00c-e5b5-48b5-b05a-b54178718868"> <img width="569" alt="Снимок экрана 2024-10-09 в 14 08 59" src="https://github.com/user-attachments/assets/8384ead0-d20e-43a0-be48-c0497e5110ff"> <img width="569" alt="Снимок экрана 2024-10-09 в 14 09 05" src="https://github.com/user-attachments/assets/894d2d8a-b707-4fd6-883c-827427b26b0e">
